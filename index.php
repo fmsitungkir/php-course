@@ -18,7 +18,18 @@
         $products ['iPhone'] = 1000;
         $products ['Toaster'] = 500;
 
-        echo "<p>A car costs $".$products['Car']."</p>";
+        foreach ($products as $key => $value) {
+          echo "<p>The ".$key." costs ".$value."</p>";
+        }
+
+        //echo "<p>A car costs $".$products['Car']."</p>";
+        echo "<h2>Items you can afford</h2>";
+
+        foreach ($products as $key => $value) {
+          if ($value <= $credit) {
+            echo "<p>".$key."</p>";
+          }
+        }
     ?>
   </body>
 </html>
